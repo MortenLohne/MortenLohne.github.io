@@ -1,16 +1,24 @@
 var canvas = document.getElementById("testSquare");
 	var context = canvas.getContext("2d");
 	
-	var square = null;
+	var canvasSize = 400;
+	
+	//var square = null;
+	
+	var squares = new Array();
+	
+	//squares[0] = square;
+	var totalSquares = 0;
 	
 	function initSquare () {
-		square = {
+		squares[totalSquares] = {
 		x: 50,
 		y: 50,
 		size: 50,
-		speedX: 5, //Should always be always positive. Change direction by flipping isGoingLeft.
-		speedY: 2,
+		speedX: 9, //Should always be always positive. Change direction by flipping isGoingLeft.
+		speedY: 5,
 		}
+		totalSquares += 1;
 	}
 	
 	function flipSign (n) {
@@ -18,10 +26,9 @@ var canvas = document.getElementById("testSquare");
 	}
 	
 	function draw() {
-		if (square !== null) { 
-			var canvasSize = 400;
-			
-			context.clearRect(0, 0, canvasSize, canvasSize);
+		context.clearRect(0, 0, canvasSize, canvasSize);
+		for (var i = 0; i < squares.length; i++) {
+			square = squares[i];
 			
 			// Changes the direction of the velocity if the square
 			// is near the edges of the canvas
