@@ -25,6 +25,14 @@ var canvas = document.getElementById("testSquare");
 		return n * (0-1)
 	}
 	
+	function willCollide (square, squares) {
+		for (var i = 0; i < squares.length; i++) {
+			if (square.x + square.speedX  squares[i].x
+				|| square.x + square.speedX === squares[i].x + square.
+		}
+	
+	}
+	
 	function draw() {
 		context.clearRect(0, 0, canvasSize, canvasSize);
 		for (var i = 0; i < squares.length; i++) {
